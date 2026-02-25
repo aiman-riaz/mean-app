@@ -1,27 +1,34 @@
-In this DevOps task, you need to build and deploy a full-stack CRUD application using the MEAN stack (MongoDB, Express, Angular 15, and Node.js). The backend will be developed with Node.js and Express to provide REST APIs, connecting to a MongoDB database. The frontend will be an Angular application utilizing HTTPClient for communication.  
+### Step 1 - Clone the Repository
+```
+git clone https://github.com/aiman-riaz/mean-app.git
+cd mean-app
+```
 
-The application will manage a collection of tutorials, where each tutorial includes an ID, title, description, and published status. Users will be able to create, retrieve, update, and delete tutorials. Additionally, a search box will allow users to find tutorials by title.
+### Step 2 - Install Docker on Ubuntu VM
+```
+sudo apt update -y
+curl -fsSL https://get.docker.com | sh
+sudo usermod -aG docker ubuntu
+sudo apt install docker-compose-plugin -y
+```
 
-## Project setup
+### Step 3 - Deploy with Docker Compose
+```
+cd ~/mean-app
+sudo docker compose up -d
+```
 
-### Node.js Server
+### Step 4 - Verify Containers are Running
+```
+sudo docker compose ps
+```
+You should see 4 containers running:
+- mean-app-mongo-1
+- mean-app-backend-1
+- mean-app-frontend-1
+- mean-app-nginx-1
 
-cd backend
-
-npm install
-
-You can update the MongoDB credentials by modifying the `db.config.js` file located in `app/config/`.
-
-Run `node server.js`
-
-### Angular Client
-
-cd frontend
-
-npm install
-
-Run `ng serve --port 8081`
-
-You can modify the `src/app/services/tutorial.service.ts` file to adjust how the frontend interacts with the backend.
-
-Navigate to `http://localhost:8081/`
+### Step 5 - Access the Application
+```
+http://YOUR_VM_IP
+```
