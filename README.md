@@ -129,17 +129,3 @@ Every time code is pushed to the main branch, GitHub Actions automatically:
 - **Database:** MongoDB as Docker container
 
 ---
-
-## Screenshots
-
-### Application UI
-![App UI](screenshots/app-ui.png)
-
-### CI/CD Pipeline
-![CI/CD](screenshots/cicd.png)
-
-### Docker Hub Images
-![Docker Hub](screenshots/dockerhub.png)
-
-### Infrastructure - Containers Running
-![Containers](screenshots/containers.png)
