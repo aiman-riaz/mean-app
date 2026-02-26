@@ -5,13 +5,13 @@ services:
     volumes:
       - mongo_data:/data/db
   backend:
-    image: aimanahmed22/mean-backend:latest
+    image: YOUR_DOCKERHUB_USERNAME/mean-backend:latest
     depends_on:
       - mongo
     environment:
       MONGODB_URI: mongodb://mongo:27017/meandb
   frontend:
-    image: aimanahmed22/mean-frontend:latest
+    image: YOUR_DOCKERHUB_USERNAME/mean-frontend:latest
     depends_on:
       - backend
   nginx:
